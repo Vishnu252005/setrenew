@@ -2,11 +2,13 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { getAdminFirestore } from '@/lib/firebaseAdmin';
+import { sendApplicantWelcomeEmail, sendTeamLeadNotification } from '@/lib/mailer';
 
 export interface LeadPayload {
   id: string;
   gymName: string;
   ownerName: string;
+  email: string;
   phone: string;
   city: string;
   memberCount: string;
@@ -26,6 +28,7 @@ export async function POST(req: Request) {
     const {
       gymName,
       ownerName,
+      email,
       phone,
       city,
       memberCount,
@@ -41,6 +44,7 @@ export async function POST(req: Request) {
       );
     }
 
+    const cleanEmail = (email || '').trim().toLowerCase();
     const rawDigits = phone.trim().replace(/\D/g, '');
     if (rawDigits.length < 10) {
       return NextResponse.json(
@@ -57,6 +61,7 @@ export async function POST(req: Request) {
       id: leadId,
       gymName: gymName.trim(),
       ownerName: ownerName.trim(),
+      email: cleanEmail,
       phone: cleanPhone,
       city: (city || 'India').trim(),
       memberCount: memberCount || '100-250',
@@ -90,6 +95,7 @@ export async function POST(req: Request) {
           await existingDoc.ref.update({
             gymName: leadData.gymName,
             ownerName: leadData.ownerName,
+            email: leadData.email || existingDoc.data()?.email || '',
             city: leadData.city,
             memberCount: leadData.memberCount,
             currentSystem: leadData.currentSystem,
@@ -97,6 +103,16 @@ export async function POST(req: Request) {
             monthlyFeeRange: leadData.monthlyFeeRange,
             lastUpdated: nowIso,
           });
+
+          // Dispatch confirmation email if email is provided
+          if (cleanEmail) {
+            sendApplicantWelcomeEmail(leadData).catch((err) =>
+              console.error('[Mailer] Applicant email error:', err)
+            );
+          }
+          sendTeamLeadNotification(leadData).catch((err) =>
+            console.error('[Mailer] Team notification error:', err)
+          );
 
           return NextResponse.json({
             success: true,
@@ -139,6 +155,16 @@ export async function POST(req: Request) {
     } catch (fsErr) {
       console.warn('[FallbackStorage] Could not write to filesystem:', fsErr);
     }
+
+    // 3. Dispatch Emails Asynchronously
+    if (cleanEmail) {
+      sendApplicantWelcomeEmail(leadData).catch((err) =>
+        console.error('[Mailer] Applicant email error:', err)
+      );
+    }
+    sendTeamLeadNotification(leadData).catch((err) =>
+      console.error('[Mailer] Team notification error:', err)
+    );
 
     return NextResponse.json({
       success: true,
