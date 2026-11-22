@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FEATURES } from '@/data/features';
-import { ArrowRight, CheckCircle2, ChevronRight, HelpCircle, Zap } from 'lucide-react';
+import { ArrowRight, ChevronRight, HelpCircle, Zap } from 'lucide-react';
 
 interface Props {
   params: Promise<{ slug: string }>;

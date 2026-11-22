@@ -41,13 +41,14 @@ export async function POST(req: Request) {
       );
     }
 
-    const cleanPhone = phone.trim().replace(/\D/g, '');
-    if (cleanPhone.length < 10) {
+    const rawDigits = phone.trim().replace(/\D/g, '');
+    if (rawDigits.length < 10) {
       return NextResponse.json(
         { error: 'Please provide a valid 10-digit WhatsApp number.' },
         { status: 400 }
       );
     }
+    const cleanPhone = rawDigits.slice(-10);
 
     const leadId = `sr_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
     const nowIso = new Date().toISOString();
@@ -124,7 +125,7 @@ export async function POST(req: Request) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
 
-      let entries: any[] = [];
+      let entries: (LeadPayload & { savedToFirestore?: boolean })[] = [];
       if (fs.existsSync(filePath)) {
         try {
           entries = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -145,7 +146,7 @@ export async function POST(req: Request) {
       position: Math.floor(Math.random() * 15) + 12,
       leadId,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Waitlist API Error:', error);
     return NextResponse.json(
       { error: 'Failed to join waitlist. Please try again.' },

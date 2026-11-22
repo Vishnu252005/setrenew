@@ -192,7 +192,7 @@ export default function Hero() {
 
                     {/* Bottom WhatsApp bar */}
                     <div className="bg-[#f0f2f5] p-2 flex items-center gap-2 border-t border-slate-200">
-                      <div className="flex-1 rounded-full bg-white px-3 py-1 text-[11px] text-slate-400 border border-slate-200">
+                      <div className="flex-1 rounded-lg bg-white px-3 py-1 text-[11px] text-slate-400 border border-slate-200">
                         Message...
                       </div>
                     </div>

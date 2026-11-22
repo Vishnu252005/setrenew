@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Building2, User, Phone, MapPin, ShieldCheck, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
+import { X, Building2, User, Phone, MapPin, ShieldCheck, CheckCircle2, AlertCircle } from 'lucide-react';
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -52,8 +52,9 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
 
       setSubmitted(true);
       setPosition(data.position || 18);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setErrorMsg(msg);
     } finally {
       setLoading(false);
     }
@@ -61,7 +62,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
-      <div className="relative w-full max-w-xl my-8 rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl">
+      <div className="relative w-full max-w-xl my-8 max-h-[90vh] overflow-y-auto rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
