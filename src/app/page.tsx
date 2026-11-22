@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import FeatureStrip from '@/components/FeatureStrip';
 import DashboardPreview from '@/components/DashboardPreview';
-import RoiCalculator from '@/components/RoiCalculator';
 import Features from '@/components/Features';
 import Comparison from '@/components/Comparison';
 import Faq from '@/components/Faq';
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <FeatureStrip />
       <DashboardPreview />
-      <RoiCalculator />
       <Features />
       <Comparison />
       <Faq />

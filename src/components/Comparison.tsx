@@ -9,7 +9,7 @@ export default function Comparison() {
 
   return (
     <>
-      <section id="comparison" className="py-24 border-t border-slate-200 bg-slate-50 relative overflow-hidden">
+      <section id="pricing" className="py-24 border-t border-slate-200 bg-slate-50 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           
           {/* Header */}

@@ -36,7 +36,7 @@ export default function Navbar() {
             <a href="#how-it-works" className="transition-colors hover:text-slate-900">
               How It Works
             </a>
-            <a href="#calculator" className="transition-colors hover:text-slate-900">
+            <a href="#pricing" className="transition-colors hover:text-slate-900">
               Pricing
             </a>
             <a href="#faq" className="transition-colors hover:text-slate-900">
