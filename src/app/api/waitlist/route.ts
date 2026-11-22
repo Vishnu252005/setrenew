@@ -156,9 +156,11 @@ export async function POST(req: Request) {
       console.warn('[FallbackStorage] Could not write to filesystem:', fsErr);
     }
 
+    const assignedPosition = Math.floor(Math.random() * 15) + 12;
+
     // 3. Dispatch Emails Asynchronously
     if (cleanEmail) {
-      sendApplicantWelcomeEmail(leadData).catch((err) =>
+      sendApplicantWelcomeEmail({ ...leadData, position: assignedPosition }).catch((err) =>
         console.error('[Mailer] Applicant email error:', err)
       );
     }
@@ -169,7 +171,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       success: true,
       message: 'Spot reserved successfully!',
-      position: Math.floor(Math.random() * 15) + 12,
+      position: assignedPosition,
       leadId,
     });
   } catch (error: unknown) {
