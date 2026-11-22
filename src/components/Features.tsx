@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MessageSquare, IndianRupee, Smartphone, Check, Sparkles } from 'lucide-react';
+import { MessageSquare, IndianRupee, Smartphone, Check } from 'lucide-react';
 
 export default function Features() {
   const features = [
@@ -35,7 +35,6 @@ export default function Features() {
         {/* Simple & Clean Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-[#16a34a] mb-3">
-            <Sparkles className="h-3.5 w-3.5" />
             <span>SIMPLE & EASY</span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
