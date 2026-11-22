@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import CountUp from './react-bits/CountUp';
 import {
   TrendingUp,
   Send,
@@ -92,7 +93,8 @@ export default function DashboardPreview() {
                 <div className="rounded-lg bg-slate-50 border border-slate-200 p-4">
                   <span className="text-xs text-slate-500 block mb-1">Collected This Month</span>
                   <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 flex items-baseline gap-1">
-                    <span className="text-slate-400 text-lg">₹</span>1,45,000
+                    <span className="text-slate-400 text-lg">₹</span>
+                    <CountUp to={145000} separator="," duration={1.4} trigger="load" />
                   </div>
                   <span className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1 mt-1">
                     <TrendingUp className="h-3.5 w-3.5" /> +18% vs October
@@ -102,7 +104,8 @@ export default function DashboardPreview() {
                 <div className="rounded-lg bg-red-50/50 border border-red-200 p-4">
                   <span className="text-xs text-slate-500 block mb-1">Pending / Overdue</span>
                   <div className="text-2xl sm:text-3xl font-extrabold text-red-600 flex items-baseline gap-1">
-                    <span className="text-slate-400 text-lg">₹</span>28,500
+                    <span className="text-slate-400 text-lg">₹</span>
+                    <CountUp to={28500} separator="," duration={1.4} trigger="load" />
                   </div>
                   <span className="text-[11px] text-red-600 font-medium mt-1 block">
                     14 members need follow-up
@@ -112,7 +115,7 @@ export default function DashboardPreview() {
                 <div className="rounded-lg bg-amber-50/50 border border-amber-200 p-4">
                   <span className="text-xs text-slate-500 block mb-1">Expiring in 7 Days</span>
                   <div className="text-2xl sm:text-3xl font-extrabold text-amber-700">
-                    9 Members
+                    <CountUp to={9} duration={1} trigger="load" /> Members
                   </div>
                   <span className="text-[11px] text-amber-700 font-medium mt-1 block">
                     Auto WhatsApp queued

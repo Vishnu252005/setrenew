@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import SpotlightCard from './react-bits/SpotlightCard';
 import { MessageSquare, Zap, Smartphone, IndianRupee, Clock, ShieldCheck, Check } from 'lucide-react';
 
 export default function Features() {
@@ -67,9 +68,11 @@ export default function Features() {
         {/* 3-Column Bento Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
-            <div
+            <SpotlightCard
               key={i}
-              className="rounded-xl border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between hover:border-slate-300 hover:shadow-md transition-all"
+              theme="light"
+              spotlightColor="rgba(37, 99, 235, 0.15)"
+              className="rounded-xl border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between hover:border-blue-300 transition-all shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -88,7 +91,7 @@ export default function Features() {
                 <Check className="h-4 w-4" />
                 <span>{f.highlight}</span>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

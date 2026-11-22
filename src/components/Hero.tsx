@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ShinyText from './react-bits/ShinyText';
+import BlurText from './react-bits/BlurText';
 import {
   CheckCircle2,
   ShieldCheck,
@@ -64,12 +66,12 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col text-left">
             <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-xs mb-5 w-fit">
               <Zap className="h-3.5 w-3.5 text-blue-600" />
-              <span>Automated WhatsApp Dues Collection</span>
+              <ShinyText text="Automated WhatsApp Dues Collection" speed={3} color="#1d4ed8" shineColor="#60a5fa" />
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-[56px] leading-[1.12]">
-              Stop Chasing Gym Fees.
-              <span className="text-blue-600 block">Collect On WhatsApp.</span>
+              <BlurText text="Stop Chasing Gym Fees." delay={80} animateBy="words" direction="top" className="text-slate-900" />
+              <span className="text-blue-600 block mt-1">Collect On WhatsApp.</span>
             </h1>
 
             <p className="mt-3.5 text-base sm:text-lg text-slate-600 font-normal max-w-xl">
