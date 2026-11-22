@@ -65,7 +65,7 @@ async function sendZeptoMail(payload: {
 }
 
 /**
- * 1. Professional Welcome & Confirmation Email to the Gym Owner
+ * 1. Ultra-Premium VIP Pass & Confirmation Email to Gym Owners
  */
 export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise<boolean> {
   if (!lead.email || !lead.email.includes('@')) {
@@ -73,118 +73,364 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
   }
 
   const encodedGym = encodeURIComponent(lead.gymName);
-  const waUrl = `https://wa.me/917994263309?text=Hi%20SetRenew%20Team,%20I%20just%20applied%20for%20${encodedGym}`;
+  const waUrl = `https://wa.me/917994263309?text=Hi%20Vishnu,%20I%20just%20activated%20my%20SetRenew%20VIP%20Trial%20for%20${encodedGym}`;
+  const passId = `SR-${new Date().getFullYear()}-VIP-${lead.id.slice(-4).toUpperCase()}`;
 
   const html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Your SetRenew 30-Day VIP Trial is Confirmed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your SetRenew VIP Pass is Ready</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #0f172a; }
-    .container { max-width: 580px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-    .header { background-color: #ffffff; padding: 28px 32px 20px; border-bottom: 1px solid #f1f5f9; }
-    .brand-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; color: #0f172a; text-decoration: none; }
-    .logo-icon { background-color: #16a34a; color: #ffffff; width: 28px; height: 28px; border-radius: 6px; display: inline-block; text-align: center; line-height: 28px; font-size: 15px; }
-    .kicker { font-size: 11px; font-weight: 700; color: #16a34a; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 14px; display: block; }
-    .content { padding: 32px; }
-    h1 { font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 14px; line-height: 1.3; }
-    p { font-size: 14px; line-height: 1.6; color: #475569; margin: 0 0 16px; }
-    .card { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 24px 0; }
-    .card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 12px; }
-    .detail-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; border-bottom: 1px solid #edf2f7; }
-    .detail-row:last-child { border-bottom: none; }
-    .detail-label { color: #64748b; }
-    .detail-val { color: #0f172a; font-weight: 600; text-align: right; }
-    .step-item { display: flex; gap: 14px; margin-bottom: 16px; }
-    .step-num { width: 24px; height: 24px; border-radius: 6px; background-color: #dcfce7; color: #15803d; font-size: 12px; font-weight: 700; text-align: center; line-height: 24px; flex-shrink: 0; }
-    .step-text { font-size: 13px; color: #334155; line-height: 1.5; }
-    .btn-container { text-align: center; margin: 28px 0 16px; }
-    .btn { display: inline-block; background-color: #16a34a; color: #ffffff !important; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .footer { background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 32px; font-size: 11px; color: #94a3b8; text-align: center; line-height: 1.5; }
-    .footer a { color: #64748b; text-decoration: underline; }
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background-color: #0c0a09;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      border: 1px solid #27272a;
+    }
+    .header-banner {
+      background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+      padding: 36px 36px 32px;
+      border-bottom: 2px solid #16a34a;
+      text-align: left;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .brand-logo {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-color: #16a34a;
+      color: #ffffff;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 32px;
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+    .brand-sub {
+      color: #71717a;
+      font-size: 13px;
+      margin-left: 6px;
+    }
+    .vip-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color: rgba(22, 163, 74, 0.15);
+      border: 1px solid rgba(22, 163, 74, 0.4);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #4ade80;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .header-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .header-desc {
+      font-size: 14px;
+      color: #a1a1aa;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .body-content {
+      padding: 36px;
+    }
+    .greeting {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    /* Digital VIP Pass Card */
+    .vip-card {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 22px;
+      margin: 24px 0 28px;
+    }
+    .vip-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #cbd5e1;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+    .card-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+    }
+    .card-id {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #16a34a;
+      background: #dcfce7;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .grid-2 {
+      display: table;
+      width: 100%;
+    }
+    .grid-col {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      padding-bottom: 8px;
+    }
+    .grid-col-right {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      text-align: right;
+      padding-bottom: 8px;
+    }
+    .val-title {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+    .val-main {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    /* Steps section */
+    .steps-section {
+      margin: 28px 0;
+    }
+    .section-heading {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+    .step-box {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      background-color: #16a34a;
+      color: #ffffff;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 26px;
+      flex-shrink: 0;
+    }
+    .step-details h4 {
+      margin: 0 0 3px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .step-details p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #64748b;
+    }
+    /* CTA button */
+    .cta-container {
+      text-align: center;
+      margin: 32px 0 16px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background-color: #16a34a;
+      color: #ffffff !important;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+      letter-spacing: 0.01em;
+    }
+    .founder-note {
+      border-left: 3px solid #16a34a;
+      background-color: #f8fafc;
+      padding: 14px 18px;
+      margin: 24px 0 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .founder-quote {
+      font-size: 13px;
+      font-style: italic;
+      color: #334155;
+      line-height: 1.5;
+      margin: 0 0 6px;
+    }
+    .founder-sign {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer {
+      background-color: #09090b;
+      padding: 24px 36px;
+      text-align: center;
+      color: #71717a;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #a1a1aa;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="brand-badge">
-        <span class="logo-icon">⚡</span>
-        <span>SetRenew</span>
+  <div class="wrapper">
+    <div class="header-banner">
+      <div class="brand-row">
+        <span class="brand-logo">⚡</span>
+        <span class="brand-name">SetRenew</span>
+        <span class="brand-sub">· by Vihaya</span>
       </div>
-      <span class="kicker">30-Day VIP Access Reserved</span>
+      <div class="vip-tag">30-Day VIP Pass · Unrestricted Access</div>
+      <h1 class="header-title">Welcome to Auto-Renew Mode, ${lead.ownerName}!</h1>
+      <p class="header-desc">Your gym’s automated WhatsApp fee recovery system is ready for activation.</p>
     </div>
 
-    <div class="content">
-      <h1>Welcome aboard, ${lead.ownerName}!</h1>
-      <p>
-        Your 30-day unrestricted free trial for <strong>${lead.gymName}</strong> is officially confirmed. You have joined the forward-thinking gym owners across India running their dues on autopilot.
+    <div class="body-content">
+      <p class="greeting">
+        Hi <strong>${lead.ownerName}</strong>,<br><br>
+        Thank you for reserving early access. While traditional gyms in India still lose <strong>₹35,000 to ₹50,000 every month</strong> to forgotten expiries and manual registers, <strong>${lead.gymName}</strong> is officially moving to 100% automated WhatsApp collections.
       </p>
 
-      <div class="card">
-        <div class="card-title">Your Registered Gym Profile</div>
-        <div class="detail-row">
-          <span class="detail-label">Gym Name</span>
-          <span class="detail-val">${lead.gymName}</span>
+      <div class="vip-card">
+        <div class="vip-card-header">
+          <span class="card-label">Official VIP Activation Pass</span>
+          <span class="card-id">${passId}</span>
         </div>
-        <div class="detail-row">
-          <span class="detail-label">Location / City</span>
-          <span class="detail-val">${lead.city}</span>
+        <div class="grid-2">
+          <div class="grid-col">
+            <div class="val-title">GYM NAME</div>
+            <div class="val-main">${lead.gymName}</div>
+          </div>
+          <div class="grid-col-right">
+            <div class="val-title">LOCATION</div>
+            <div class="val-main">${lead.city}</div>
+          </div>
         </div>
-        <div class="detail-row">
-          <span class="detail-label">WhatsApp Number</span>
-          <span class="detail-val">+91 ${lead.phone}</span>
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="grid-col">
+            <div class="val-title">ACTIVE MEMBERS</div>
+            <div class="val-main">${lead.memberCount} Members</div>
+          </div>
+          <div class="grid-col-right">
+            <div class="val-title">UPI COMMISSION</div>
+            <div class="val-main" style="color: #16a34a;">0% (Direct to Bank)</div>
+          </div>
         </div>
-        <div class="detail-row">
-          <span class="detail-label">Active Members</span>
-          <span class="detail-val">${lead.memberCount} members</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">Current Tracking Method</span>
-          <span class="detail-val">${lead.currentSystem || 'Standard'}</span>
-        </div>
-      </div>
-
-      <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px;">Here is what happens next:</p>
-
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <strong>WhatsApp Activation:</strong> Our onboarding team will connect with you at <strong>+91 ${lead.phone}</strong> on WhatsApp to configure your automated reminder templates.
-        </div>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <strong>Direct 1-Tap UPI:</strong> We connect your existing gym UPI handle (Google Pay, PhonePe, Paytm). 100% of renewal fees deposit directly into your bank account with 0% gateway commission.
+        <div class="grid-2" style="margin-top: 10px;">
+          <div class="grid-col">
+            <div class="val-title">TRIAL DURATION</div>
+            <div class="val-main">30 Days 100% Free</div>
+          </div>
+          <div class="grid-col-right">
+            <div class="val-title">HARDWARE NEEDED</div>
+            <div class="val-main">₹0 (Mobile Native)</div>
+          </div>
         </div>
       </div>
 
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <strong>Member Spreadsheet Import:</strong> Have an existing notebook or Excel list? Send it over to our team, and we will upload your member expiries in under 60 seconds with zero manual data entry.
+      <div class="steps-section">
+        <div class="section-heading">How We Get Your Gym Running in 2 Minutes:</div>
+
+        <div class="step-box">
+          <div class="step-badge">1</div>
+          <div class="step-details">
+            <h4>Automated WhatsApp Reminders</h4>
+            <p>Polite messages are dispatched automatically 3 days and 1 day before plan expiry with a direct 1-tap GPay / PhonePe payment button.</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-badge">2</div>
+          <div class="step-details">
+            <h4>100% Money to Your Bank (0% Cut)</h4>
+            <p>Payments route directly from member UPI apps to your gym’s existing QR / UPI VPA. No middlemen, no 3-day gateway delays.</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-badge">3</div>
+          <div class="step-details">
+            <h4>60-Second Spreadsheet Import</h4>
+            <p>Share your existing member notebook or Excel sheet on WhatsApp. Our onboarding team uploads everything with zero manual typing.</p>
+          </div>
         </div>
       </div>
 
-      <div class="btn-container">
-        <a href="${waUrl}" class="btn" target="_blank" rel="noopener noreferrer">
-          Chat With Our Team on WhatsApp →
+      <div class="cta-container">
+        <a href="${waUrl}" class="cta-btn" target="_blank">
+          Activate Your WhatsApp Setup Now →
         </a>
       </div>
 
-      <p style="font-size: 12px; color: #64748b; text-align: center; margin-top: 20px;">
-        Have immediate questions? Reply directly to this email or write to <a href="mailto:support@vihaya.app" style="color: #16a34a; font-weight: 600;">support@vihaya.app</a>.
+      <div class="founder-note">
+        <p class="founder-quote">
+          “No more standing at reception saying ‘Bhai, fees pending hai’. SetRenew handles collections politely in the background so you can focus on training members.”
+        </p>
+        <span class="founder-sign">— Vishnu S · Founder, Vihaya Innovations</span>
+      </div>
+
+      <p style="font-size: 12px; color: #64748b; text-align: center; margin-top: 24px;">
+        Questions? Reply directly to this email or WhatsApp us anytime at <strong style="color: #0f172a;">+91 79942 63309</strong>.
       </p>
     </div>
 
     <div class="footer">
-      SetRenew is a product of <strong>Vihaya Innovations Private Limited</strong>.<br>
+      SetRenew is engineered & operated by <strong>Vihaya Innovations Private Limited</strong>.<br>
       Pallimukku, Kollam, Kerala, India.<br>
-      &copy; 2026 SetRenew. All rights reserved. · <a href="https://setrenew.vihaya.app/privacy">Privacy Policy</a> · <a href="https://setrenew.vihaya.app/terms">Terms</a>
+      &copy; 2026 SetRenew. All rights reserved. · <a href="https://setrenew.vihaya.app/privacy">Privacy Policy</a> · <a href="https://setrenew.vihaya.app/terms">Terms of Service</a>
     </div>
   </div>
 </body>
@@ -194,7 +440,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
   return sendZeptoMail({
     toAddress: lead.email,
     toName: lead.ownerName,
-    subject: `Your SetRenew 30-Day VIP Trial is Confirmed — ${lead.gymName}`,
+    subject: `⚡ Your SetRenew 30-Day VIP Pass is Ready — ${lead.gymName}`,
     htmlContent: html,
   });
 }
@@ -223,15 +469,14 @@ export async function sendTeamLeadNotification(lead: EmailLeadPayload): Promise<
     <p style="font-size: 14px; margin: 0 0 12px;"><strong>Main Headache:</strong> ${lead.primaryPainPoint || 'N/A'}</p>
   </div>
 
-  <div style="margin-top: 14px; display: flex; gap: 10px;">
-    <a href="${waLink}" style="background: #25D366; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px;">
+  <div style="margin-top: 14px;">
+    <a href="${waLink}" style="display: inline-block; background: #25D366; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px;">
       WhatsApp Gym Owner →
     </a>
   </div>
 </div>
   `;
 
-  // Dispatch to both support@vihaya.app and founder notification email
   await sendZeptoMail({
     toAddress: TEAM_INBOX,
     toName: 'SetRenew Growth Team',
