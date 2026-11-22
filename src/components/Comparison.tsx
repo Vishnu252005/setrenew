@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, X, Sparkles, ArrowRight, AlertCircle, ShieldAlert } from 'lucide-react';
+import { Check, X, ArrowRight, AlertCircle, ShieldAlert } from 'lucide-react';
 import WaitlistModal from './WaitlistModal';
 
 export default function Comparison() {
@@ -15,7 +15,6 @@ export default function Comparison() {
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-[#16a34a] mb-3 shadow-xs">
-              <Sparkles className="h-3.5 w-3.5" />
               <span>THE HONEST COMPARISON</span>
             </div>
             <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
@@ -107,22 +106,12 @@ export default function Comparison() {
             <div className="relative rounded-2xl border-2 border-[#16a34a] bg-white p-7 sm:p-8 shadow-xl shadow-emerald-500/10 flex flex-col justify-between lg:-translate-y-2">
               
               {/* Top Banner Tag */}
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md bg-[#16a34a] border border-emerald-500 px-3.5 py-0.5 text-[11px] font-bold text-white shadow-md flex items-center gap-1.5 uppercase tracking-wide">
-                <Sparkles className="h-3 w-3" />
-                <span>Recommended for Indian Gyms</span>
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md bg-[#16a34a] border border-emerald-500 px-4 py-0.5 text-[11px] font-bold text-white shadow-md uppercase tracking-wide">
+                <span>Recommended</span>
               </div>
 
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="rounded-md bg-emerald-50 border border-emerald-200 px-2.5 py-1 text-[11px] font-bold text-[#16a34a] uppercase tracking-wider">
-                    Automated & Clean
-                  </span>
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
-                    Save ₹4,999/yr
-                  </span>
-                </div>
-
-                <h3 className="text-3xl font-black text-slate-900">SetRenew</h3>
+                <h3 className="text-3xl font-black text-slate-900 mt-2">SetRenew</h3>
                 <p className="text-xs text-slate-600 mt-1">100% WhatsApp Native Fee Recovery Tool</p>
 
                 <div className="mt-5 pb-5 border-b border-emerald-100">

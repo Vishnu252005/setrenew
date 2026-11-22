@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Sparkles, Building2, User, Phone, MapPin, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { X, Building2, User, Phone, MapPin, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -59,7 +59,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
         {submitted ? (
           <div className="py-6 text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 mb-4">
-              <Sparkles className="h-7 w-7" />
+              <CheckCircle2 className="h-7 w-7" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900">VIP Spot Confirmed!</h3>
             <p className="mt-2 text-slate-600 text-sm">
