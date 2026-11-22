@@ -69,7 +69,7 @@ export default function Comparison() {
             <thead className="border-b border-slate-200 bg-slate-50 text-xs font-bold text-slate-600 uppercase tracking-wider">
               <tr>
                 <th className="py-4 px-6">Capability</th>
-                <th className="py-4 px-6 text-blue-700 bg-blue-50/70 border-x border-blue-200">
+                <th className="py-4 px-6 text-emerald-800 bg-emerald-50/70 border-x border-emerald-200">
                   SetRenew (Our App)
                 </th>
                 <th className="py-4 px-6">Legacy Gym ERPs</th>
@@ -82,11 +82,11 @@ export default function Comparison() {
                   <td className="py-4 px-6 font-semibold text-slate-900">{row.feature}</td>
 
                   {/* SetRenew Column */}
-                  <td className="py-4 px-6 font-bold text-slate-900 bg-blue-50/30 border-x border-blue-200">
+                  <td className="py-4 px-6 font-bold text-slate-900 bg-emerald-50/30 border-x border-emerald-200">
                     {typeof row.setrenew === 'boolean' ? (
                       row.setrenew ? (
-                        <div className="flex items-center gap-1.5 text-emerald-600 font-bold">
-                          <Check className="h-4 w-4" /> <span>Yes</span>
+                        <div className="flex items-center gap-1.5 text-[#16a34a] font-bold">
+                          <Check className="h-4 w-4 stroke-[3]" /> <span>Yes</span>
                         </div>
                       ) : (
                         <div className="flex items-center gap-1.5 text-slate-400">
@@ -94,7 +94,7 @@ export default function Comparison() {
                         </div>
                       )
                     ) : (
-                      <span className="text-blue-700 font-bold">{row.setrenew}</span>
+                      <span className="text-[#16a34a] font-bold">{row.setrenew}</span>
                     )}
                   </td>
 

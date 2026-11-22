@@ -71,12 +71,12 @@ export default function Features() {
             <SpotlightCard
               key={i}
               theme="light"
-              spotlightColor="rgba(37, 99, 235, 0.15)"
-              className="rounded-xl border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between hover:border-blue-300 transition-all shadow-xs"
+              spotlightColor="rgba(22, 163, 74, 0.15)"
+              className="rounded-xl border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between hover:border-emerald-300 transition-all shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm shadow-blue-500/20">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#16a34a] text-white shadow-sm shadow-emerald-500/20">
                     <f.icon className="h-5 w-5" />
                   </div>
                   <span className="rounded-md bg-white border border-slate-200 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700 shadow-xs">
@@ -87,8 +87,8 @@ export default function Features() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{f.description}</p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-200 flex items-center gap-1.5 text-xs font-bold text-emerald-600">
-                <Check className="h-4 w-4" />
+              <div className="mt-6 pt-4 border-t border-slate-200 flex items-center gap-1.5 text-xs font-bold text-[#16a34a]">
+                <Check className="h-4 w-4 stroke-[3]" />
                 <span>{f.highlight}</span>
               </div>
             </SpotlightCard>

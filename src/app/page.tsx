@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import FeatureStrip from '@/components/FeatureStrip';
 import DashboardPreview from '@/components/DashboardPreview';
 import RoiCalculator from '@/components/RoiCalculator';
 import Features from '@/components/Features';
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       <Navbar />
       <Hero />
+      <FeatureStrip />
       <DashboardPreview />
       <RoiCalculator />
       <Features />
