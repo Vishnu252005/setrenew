@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://setrenew.vercel.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://setrenew.vihaya.app';
 const VIHAYA_URL = 'https://vihaya.app';
 
 export default function StructuredData() {

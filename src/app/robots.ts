@@ -24,7 +24,7 @@ const AI_CRAWLERS = [
 ];
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://setrenew.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://setrenew.vihaya.app';
 
   return {
     rules: [
