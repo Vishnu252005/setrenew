@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'SetRenew — Stop Chasing Gym Fees. Collect On WhatsApp.';
+export const alt = 'SetRenew — Collect Gym Fees Automatically on WhatsApp';
 export const size = {
   width: 1200,
   height: 630,
@@ -12,7 +12,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)',
+          background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #ffffff 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -21,16 +21,17 @@ export default async function Image() {
           justifyContent: 'space-between',
           padding: '80px',
           fontFamily: 'sans-serif',
-          border: '16px solid #e2e8f0',
+          border: '16px solid #dcfce7',
         }}
       >
+        {/* Top Brand Bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <div
             style={{
               width: '56px',
               height: '56px',
               borderRadius: '14px',
-              backgroundColor: '#2563eb',
+              backgroundColor: '#16a34a',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -42,19 +43,20 @@ export default async function Image() {
             SR
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: '32px', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.5px' }}>
+            <span style={{ fontSize: '34px', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.5px' }}>
               SetRenew
             </span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: '#2563eb', letterSpacing: '0.5px' }}>
-              OFFICIAL META WHATSAPP CLOUD API
+            <span style={{ fontSize: '15px', fontWeight: 800, color: '#16a34a', letterSpacing: '0.5px' }}>
+              BUILT FOR INDIAN GYM OWNERS 🇮🇳
             </span>
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '960px' }}>
+        {/* Center Headline */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '980px' }}>
           <h1
             style={{
-              fontSize: '64px',
+              fontSize: '66px',
               fontWeight: 900,
               color: '#0f172a',
               lineHeight: 1.1,
@@ -62,8 +64,8 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Stop Chasing Gym Fees. <br />
-            <span style={{ color: '#2563eb' }}>Collect On WhatsApp.</span>
+            Collect Gym Fees <br />
+            Automatically on <span style={{ color: '#16a34a' }}>WhatsApp.</span>
           </h1>
           <p
             style={{
@@ -73,49 +75,60 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Automated WhatsApp renewal reminders with 1-tap UPI links. Zero hardware. Zero manual follow-ups.
+            Polite WhatsApp reminders with direct 1-tap UPI payment links (GPay, PhonePe). Zero biometric hardware. Flat ₹499/mo.
           </p>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        {/* Bottom Feature Badges */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              backgroundColor: '#dbeafe',
+              backgroundColor: '#16a34a',
               borderRadius: '10px',
-              padding: '10px 18px',
+              padding: '12px 22px',
               fontSize: '18px',
-              fontWeight: 700,
-              color: '#1d4ed8',
+              fontWeight: 800,
+              color: '#ffffff',
             }}
           >
-            30 Days Free Trial
+            First 30 Days 100% Free
           </div>
+
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              backgroundColor: '#dcfce7',
+              backgroundColor: '#f0fdf4',
               borderRadius: '10px',
-              padding: '10px 18px',
+              border: '2px solid #bbf7d0',
+              padding: '10px 20px',
               fontSize: '18px',
               fontWeight: 700,
               color: '#15803d',
             }}
           >
-            Direct GPay & PhonePe (0% Cut)
+            Direct UPI to Bank (0% Cut)
           </div>
+
           <div
             style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: '#f8fafc',
+              borderRadius: '10px',
+              border: '2px solid #e2e8f0',
+              padding: '10px 20px',
               fontSize: '18px',
-              color: '#64748b',
-              fontWeight: 600,
+              fontWeight: 700,
+              color: '#334155',
             }}
           >
-            setrenew.in
+            Zero Biometrics Needed
           </div>
         </div>
       </div>
