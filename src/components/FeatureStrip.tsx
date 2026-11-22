@@ -8,28 +8,28 @@ export default function FeatureStrip() {
     {
       icon: MessageSquare,
       title: 'WhatsApp Fee Reminders',
-      description: 'Automated, personalized reminders to members',
+      description: 'Automated, polite reminders sent before and on expiry',
     },
     {
       icon: Wallet,
       title: 'Online Fee Collection',
-      description: 'Get payments via UPI, cards & wallets',
+      description: 'Collect fees directly via GPay, PhonePe, or Paytm with 0% cut',
     },
     {
       icon: BarChart3,
       title: 'Revenue Tracking',
-      description: 'See collections, due payments and monthly revenue',
+      description: 'See live collections, pending dues, and monthly revenue',
     },
     {
       icon: Users,
       title: 'Membership Management',
-      description: 'Add members, plans, and track renewals easily',
+      description: 'Add members in 10 seconds without complicated software',
     },
   ];
 
   return (
-    <div className="relative -mt-6 z-30 mx-auto max-w-7xl px-4 sm:px-6">
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl shadow-slate-200/50">
+    <section className="border-y border-slate-200/80 bg-white py-8 sm:py-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
           {items.map((item, idx) => (
             <div key={idx} className={`flex items-start gap-3.5 ${idx !== 0 ? 'sm:pl-6 pt-4 sm:pt-0' : ''}`}>
@@ -48,6 +48,6 @@ export default function FeatureStrip() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
