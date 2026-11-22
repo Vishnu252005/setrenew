@@ -227,7 +227,7 @@ export default function Comparison() {
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>Awkward front desk confrontations: &ldquo;Bhai, fees pending hai&rdquo;</span>
+                    <span>Awkward front-desk confrontations asking members for pending fees</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">

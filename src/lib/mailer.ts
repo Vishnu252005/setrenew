@@ -260,7 +260,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
           <tr>
             <td style="padding: 12px 16px;">
               <p style="font-size: 12px; font-style: italic; color: #475569; margin: 0 0 4px; line-height: 1.5;">
-                &ldquo;No more standing at reception saying &lsquo;Bhai, fees pending hai&rsquo;. SetRenew handles renewal reminders politely in the background so you can focus on training.&rdquo;
+                &ldquo;No more awkward front-desk confrontations asking members for pending dues. SetRenew handles renewal reminders politely in the background so you can focus on training.&rdquo;
               </p>
               <div style="font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.04em;">
                 &mdash; The SetRenew Team

@@ -191,7 +191,7 @@ export const COMPARISONS: Record<string, ComparisonData> = {
     setrenewHardware: '₹0 Hardware Needed',
     competitorWeaknesses: [
       'Members lift for weeks past expiry without anyone noticing',
-      'Awkward face-to-face confrontations: "Bhaiya, fees pending hai"',
+      'Awkward face-to-face confrontations asking members for pending fees',
       'No automated WhatsApp reminders on expiry day',
       'Data lost forever if the notebook gets damaged or phone breaks',
       'Hours spent every Sunday calculating who owes what',

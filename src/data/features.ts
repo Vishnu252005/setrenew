@@ -43,7 +43,7 @@ export const FEATURES: Record<string, FeatureData> = {
       },
       {
         title: 'Zero Awkward Confrontations',
-        description: 'No more standing at the front desk telling members "Bhai, fees pending hai." The system politely handles reminders automatically.',
+        description: 'No more awkward front-desk confrontations asking members for pending fees. The system politely handles reminders automatically.',
         stat: '100% Polite',
       },
       {

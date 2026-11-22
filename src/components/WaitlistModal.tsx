@@ -262,7 +262,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
                   className="w-full rounded-lg bg-slate-50 border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:bg-white focus:border-emerald-600 focus:outline-none focus:ring-1 focus:ring-emerald-600 cursor-pointer"
                 >
                   <option value="Members delaying renewal fees">Members delaying renewal fees & uncollected dues</option>
-                  <option value="Awkward front-desk talks">Awkward front-desk confrontations (&quot;Bhai fees kab doge&quot;)</option>
+                  <option value="Awkward front-desk talks">Awkward front-desk confrontations asking for pending fees</option>
                   <option value="Wasting hours calling members">Wasting 2+ hours every day calling expired members</option>
                   <option value="Biometric machine jams">Biometric turnstile breakdown & morning queue rush</option>
                   <option value="Clunky software">Overly complicated software that staff refuses to use</option>
