@@ -7,67 +7,60 @@ export default function Features() {
   const features = [
     {
       icon: MessageSquare,
-      title: 'Automated WhatsApp Expiry Bot',
-      description:
-        'Fires polite, automated WhatsApp reminders at T-3 days, Day of Expiry, and T+3 days with embedded UPI payment links. Zero manual typing required.',
-      badge: 'Official Meta Cloud API',
+      title: 'Automated Reminders',
+      description: 'Polite WhatsApp reminders sent before and on expiry with 1-tap UPI payment links.',
+      badge: 'Meta Cloud API',
       highlight: '98% Open Rate',
     },
     {
       icon: Zap,
-      title: 'Zero Biometric Hardware Needed',
-      description:
-        'Throw away ₹25,000 fragile fingerprint turnstiles that break down during rush hours. Members walk in freely and lift. Your focus is pure revenue collection.',
-      badge: 'Save ₹25,000+ Hardware',
+      title: 'Zero Hardware Needed',
+      description: 'No expensive fingerprint scanners or turnstiles. Run everything from phone or web.',
+      badge: 'Zero Hardware Cost',
       highlight: 'Zero Maintenance',
     },
     {
       icon: Smartphone,
-      title: '1-Tap Manual "Ping WhatsApp"',
-      description:
-        'Prefer a personal touch? Tap once from your phone to open a pre-written polite reminder on WhatsApp directly with the member.',
+      title: '1-Tap Quick Nudge',
+      description: 'Send pre-composed polite reminders to any pending member with a single tap.',
       badge: 'Zero Typing',
-      highlight: '1-Second Nudge',
+      highlight: '1-Tap Action',
     },
     {
       icon: IndianRupee,
-      title: 'Direct UPI Settlement (0% Commission)',
-      description:
-        'Members pay directly to your gym’s Google Pay, PhonePe, or Paytm UPI handle. SetRenew takes 0% commission on your fees.',
-      badge: '0% Cuts',
+      title: 'Direct UPI Settlement',
+      description: 'Fees go directly to your GPay, PhonePe, or Paytm handle with 0% gateway commission.',
+      badge: '0% Commission',
       highlight: 'Direct to Bank',
     },
     {
       icon: Clock,
-      title: '10-Second Member Onboarding',
-      description:
-        'No 30-field registration forms. Just Name, WhatsApp Number, Plan, and Start Date. Ready in seconds right from your phone.',
-      badge: 'Friction-Free',
+      title: '10-Second Setup',
+      description: 'Add new members in seconds with just name, WhatsApp number, and membership plan.',
+      badge: 'Fast Onboarding',
       highlight: 'Instant Setup',
     },
     {
       icon: ShieldCheck,
-      title: 'Cloud-Synced Across Phone & Tablet',
-      description:
-        'Unlike offline apps that lose your data when you switch phones, SetRenew is 100% cloud-synced across your phone, tablet, and desk.',
-      badge: 'Never Lose Data',
+      title: 'Live Cloud Sync',
+      description: 'Access and manage members seamlessly across your phone, tablet, and reception desk.',
+      badge: 'Always Synced',
       highlight: 'Real-time Backup',
     },
   ];
 
   return (
-    <section id="features" className="py-24 border-t border-slate-200 bg-white relative">
+    <section id="features" className="py-20 border-t border-slate-200 bg-white relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 mb-3">
-            <span>BUILT FOR BUSY GYM OWNERS</span>
+            <span>CORE FEATURES</span>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-5xl uppercase">
-            Everything You Need to Run Collections on Autopilot
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Everything You Need. Nothing You Don't.
           </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-            We stripped out the bloated ERP features nobody uses and perfected the only thing that matters: 
-            getting every rupee your gym earned deposited into your bank account on time.
+          <p className="mt-2.5 text-slate-600 text-sm sm:text-base">
+            Simple, automated fee collection built for Indian gym owners.
           </p>
         </div>
 

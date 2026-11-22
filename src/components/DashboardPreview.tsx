@@ -14,16 +14,15 @@ export default function DashboardPreview() {
     <section id="preview" className="relative py-24 border-t border-slate-200 bg-white">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 mb-3 shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-            <span>THE 10-SECOND REVENUE PULSE</span>
+            <span>DAILY REVENUE PULSE</span>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-5xl uppercase">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Built for Gym Owners. Not Accountants.
           </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Forget 50-field ERP dropdowns. You get one clean mobile pulse that tells you what came in today, 
-            what’s pending, and recovers overdue dues on WhatsApp with a single tap.
+          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+            Know what was collected today, who is overdue, and send reminders in one tap.
           </p>
         </div>
 
@@ -39,17 +38,16 @@ export default function DashboardPreview() {
                 className="object-cover filter brightness-95 hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md rounded-md px-2.5 py-1 text-[11px] font-semibold text-slate-800 border border-slate-200 shadow-sm">
+              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md rounded-md px-2.5 py-1 text-[11px] font-semibold text-slate-800 border border-slate-200 shadow-xs">
                 Live Gym Overview
               </div>
             </div>
 
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Zero Software Fatigue</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Traditional gym software takes 2 weeks to learn and forces your trainers to become computer operators. 
-                  SetRenew is so simple any trainer can add a new member in 10 seconds.
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Zero Software Clutter</h3>
+                <p className="text-xs text-slate-500">
+                  Clean, fast, and mobile-first. Any trainer can pick it up in seconds.
                 </p>
               </div>
 

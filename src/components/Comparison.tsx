@@ -50,17 +50,17 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="py-24 border-t border-slate-200 bg-slate-50">
+    <section id="comparison" className="py-20 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700 mb-3 shadow-xs">
-            <span>THE HONEST COMPARISON</span>
+            <span>COMPARISON</span>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl uppercase">
-            Why SetRenew is 10x Simpler
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Why Gyms Choose SetRenew
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
-            See how SetRenew compares to bloated legacy ERPs and manual Excel sheets.
+          <p className="mt-2 text-slate-600 text-sm sm:text-base">
+            How SetRenew compares to legacy software and manual spreadsheets.
           </p>
         </div>
 

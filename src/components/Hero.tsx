@@ -55,103 +55,71 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-10 pb-20 md:pt-16 md:pb-28 bg-slate-50 bg-grid-pattern">
+    <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-slate-50 bg-grid-pattern">
       <div className="hero-glow-light absolute inset-0 pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Top Announcement Bar */}
-        <div className="flex justify-start sm:justify-center mb-8">
-          <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-blue-700 shadow-sm">
-            <Zap className="h-3.5 w-3.5 text-blue-600" />
-            <span>NO BIOMETRIC TURNSTILES · NO DAILY DESK SCANNING · 100% AUTOMATED WHATSAPP</span>
-          </div>
-        </div>
-
-        {/* 2-Column High-Impact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Core Value Proposition & Waitlist Card (7 Cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Column: Headline, subhead & clean form */}
           <div className="lg:col-span-7 flex flex-col text-left">
-            <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl lg:text-6xl sm:leading-[1.1] uppercase">
-              Stop Chasing Gym Fees Manually.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 block mt-1">
-                Collect 100% On Time on WhatsApp.
-              </span>
-            </h1>
-
-            <p className="mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-              The zero-effort fee collection tool built specifically for Indian gym owners. 
-              Automatically triggers polite WhatsApp reminders with 1-tap UPI payment links. 
-              Say goodbye to awkward front-desk confrontations and recover up to <strong className="text-emerald-600 font-semibold">₹45,000+</strong> every month in forgotten renewals.
-            </p>
-
-            {/* Quick Benefits Strip */}
-            <div className="mt-6 flex flex-wrap gap-y-2 gap-x-5 text-xs sm:text-sm text-slate-600 font-medium">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0" />
-                First 30 Days 100% Free
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0" />
-                Direct GPay & PhonePe UPI (0% Cut)
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0" />
-                Official Meta Cloud API
-              </span>
+            <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-xs mb-5 w-fit">
+              <Zap className="h-3.5 w-3.5 text-blue-600" />
+              <span>Automated WhatsApp Dues Collection</span>
             </div>
 
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-[56px] leading-[1.12]">
+              Stop Chasing Gym Fees.
+              <span className="text-blue-600 block">Collect On WhatsApp.</span>
+            </h1>
+
+            <p className="mt-3.5 text-base sm:text-lg text-slate-600 font-normal max-w-xl">
+              Automated renewal reminders with 1-tap UPI links. Zero hardware. Zero manual follow-ups.
+            </p>
+
             {/* Waitlist Form Card */}
-            <div id="waitlist-section" className="mt-8">
-              <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-7 shadow-xl relative">
+            <div id="waitlist-section" className="mt-7 max-w-xl">
+              <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-md relative">
                 {submitted ? (
-                  <div className="py-6 text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 mb-4">
-                      <Sparkles className="h-7 w-7" />
+                  <div className="py-4 text-center">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 mb-3">
+                      <Sparkles className="h-6 w-6" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900">VIP Early Access Confirmed!</h3>
-                    <p className="mt-2 text-slate-600 text-sm max-w-md mx-auto">
+                    <h3 className="text-xl font-bold text-slate-900">VIP Spot Confirmed!</h3>
+                    <p className="mt-1.5 text-slate-600 text-sm">
                       Thank you, <strong className="text-slate-900">{ownerName}</strong>! Your 30-day free access for{' '}
                       <strong className="text-slate-900">{gymName}</strong> is reserved.
                     </p>
                     {position && (
-                      <div className="mt-4 inline-block rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+                      <div className="mt-3 inline-block rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700">
                         Early Access Position: <span className="text-slate-900 font-bold">#{position}</span>
                       </div>
                     )}
-                    <div className="mt-6 rounded-lg bg-slate-50 p-4 border border-slate-200 text-xs text-slate-600 text-left space-y-1.5">
-                      <div className="flex items-center gap-2 text-emerald-600 font-semibold">
-                        <CheckCircle2 className="h-4 w-4" /> 1 Month Free VIP Pass Locked In
-                      </div>
-                      <p>
-                        We will notify you directly on WhatsApp ({phone}) with your private access link before public launch.
-                      </p>
-                    </div>
                   </div>
                 ) : (
                   <div>
-                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
+                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
                       <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-                          LIMITED TO FIRST 100 GYMS
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600">
+                          LIMITED EARLY ACCESS
                         </span>
-                        <h3 className="text-lg font-bold text-slate-900">Join the VIP Waitlist (30 Days Free)</h3>
+                        <h3 className="text-base font-bold text-slate-900">Get Your First 30 Days Free</h3>
                       </div>
-                      <span className="hidden sm:inline-block rounded-md bg-blue-50 border border-blue-200 px-2.5 py-1 text-[11px] font-semibold text-blue-700">
-                        Save ₹4,999/yr
+                      <span className="rounded-md bg-blue-50 border border-blue-200 px-2 py-0.5 text-[11px] font-semibold text-blue-700">
+                        100% Free Trial
                       </span>
                     </div>
 
                     {errorMsg && (
-                      <div className="mb-4 rounded-lg bg-red-50 border border-red-200 p-3 text-xs text-red-600">
+                      <div className="mb-3 rounded-lg bg-red-50 border border-red-200 p-2.5 text-xs text-red-600">
                         {errorMsg}
                       </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className="space-y-3.5">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <form onSubmit={handleSubmit} className="space-y-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
-                            Gym / Fitness Studio Name *
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
+                            Gym Name *
                           </label>
                           <div className="relative">
                             <Building2 className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
@@ -167,7 +135,7 @@ export default function Hero() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             Owner / Manager Name *
                           </label>
                           <div className="relative">
@@ -184,9 +152,9 @@ export default function Hero() {
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             WhatsApp Number *
                           </label>
                           <div className="relative">
@@ -203,7 +171,7 @@ export default function Hero() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label className="block text-xs font-medium text-slate-700 mb-1">
                             City *
                           </label>
                           <div className="relative">
@@ -213,7 +181,7 @@ export default function Hero() {
                               required
                               value={city}
                               onChange={(e) => setCity(e.target.value)}
-                              placeholder="e.g. Bangalore, Kochi, Pune"
+                              placeholder="e.g. Bangalore, Kochi"
                               className="w-full rounded-lg bg-slate-50 border border-slate-300 px-3.5 py-2 pl-9 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
                             />
                           </div>
@@ -221,8 +189,8 @@ export default function Hero() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1">
-                          Estimated Active Members
+                        <label className="block text-xs font-medium text-slate-700 mb-1">
+                          Active Members
                         </label>
                         <select
                           value={memberCount}
@@ -239,15 +207,14 @@ export default function Hero() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="w-full flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition-all hover:bg-blue-700 active:scale-[0.99] disabled:opacity-50 border border-blue-600 cursor-pointer"
+                        className="w-full flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-700 active:scale-[0.99] disabled:opacity-50 border border-blue-600 cursor-pointer"
                       >
-                        <span>{loading ? 'Reserving Your VIP Access...' : 'Claim 30 Days Free VIP Access'}</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <span>{loading ? 'Reserving...' : 'Claim 30 Days Free →'}</span>
                       </button>
 
-                      <p className="text-[11px] text-slate-500 text-center flex items-center justify-center gap-1.5 pt-1">
+                      <p className="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1.5 pt-0.5">
                         <ShieldCheck className="h-3.5 w-3.5 text-slate-400" />
-                        Zero credit card required · Instant WhatsApp confirmation
+                        No credit card required. Cancel anytime.
                       </p>
                     </form>
                   </div>
@@ -256,18 +223,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Realistic Phone Mockup & Visual Social Proof (5 Cols) */}
+          {/* Right Column: Phone Mockup */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            {/* The Phone Container */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[360px] rounded-[38px] p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 shadow-2xl border-4 border-slate-700/80">
-              {/* Dynamic Island / Speaker Notch */}
-              <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-30" />
+            <div className="relative w-full max-w-[330px] rounded-[36px] p-3 bg-slate-900 shadow-xl border-4 border-slate-800">
+              <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-3.5 bg-black rounded-full z-30" />
 
-              {/* Screen Canvas */}
-              <div className="rounded-[28px] overflow-hidden bg-slate-950 border border-slate-800 text-white flex flex-col h-[580px] shadow-inner">
-                {/* WhatsApp Chat Header */}
-                <div className="bg-[#1f2c34] px-4 pt-10 pb-3 flex items-center gap-3 border-b border-zinc-800/80">
-                  <div className="relative h-10 w-10 rounded-full overflow-hidden bg-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+              <div className="rounded-[26px] overflow-hidden bg-slate-950 text-white flex flex-col h-[520px]">
+                {/* Header */}
+                <div className="bg-[#1f2c34] px-4 pt-8 pb-3 flex items-center gap-3 border-b border-zinc-800">
+                  <div className="relative h-9 w-9 rounded-full overflow-hidden bg-blue-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
                     <Image
                       src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=150&q=80"
                       alt="IronFit Gym"
@@ -276,86 +240,60 @@ export default function Hero() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5">
-                      <span className="font-semibold text-sm text-zinc-100 truncate">IronFit Gym</span>
-                      <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
-                    </div>
-                    <span className="text-[11px] text-zinc-400 block truncate">Official Business Account</span>
+                    <span className="font-semibold text-xs text-zinc-100 block truncate">IronFit Gym</span>
+                    <span className="text-[10px] text-zinc-400 block">WhatsApp Business</span>
                   </div>
                 </div>
 
-                {/* WhatsApp Chat Body */}
-                <div className="flex-1 p-3.5 overflow-y-auto space-y-3 bg-[#0b141a] bg-opacity-95 text-xs">
-                  {/* Encryption notice */}
-                  <div className="text-center">
-                    <span className="inline-block bg-[#182229] text-[#8696a0] text-[10px] px-2.5 py-1 rounded-md">
-                      🔒 Messages are end-to-end encrypted
-                    </span>
-                  </div>
-
-                  {/* Automated Reminder Message */}
-                  <div className="bg-[#1f2c34] text-zinc-100 p-3 rounded-xl rounded-tl-none max-w-[88%] shadow-md border border-zinc-800 space-y-2">
-                    <p className="leading-relaxed">
-                      Hi <strong>Rahul</strong>! 👋 Hope you had a great workout today at IronFit.
-                    </p>
-                    <p className="leading-relaxed">
-                      A quick heads-up that your <strong>Gold Monthly Plan</strong> expires on <strong>25 Nov 2026</strong>.
-                    </p>
-                    <p className="text-zinc-300 leading-relaxed">
-                      To keep your locker and access active without any queue, tap below to renew in 1 tap:
-                    </p>
+                {/* Chat Messages */}
+                <div className="flex-1 p-3 overflow-y-auto space-y-2.5 bg-[#0b141a] text-xs">
+                  <div className="bg-[#1f2c34] text-zinc-100 p-3 rounded-xl rounded-tl-none max-w-[90%] shadow-sm space-y-1.5">
+                    <p>Hi <strong>Rahul</strong>! Your <strong>Monthly Plan</strong> at IronFit expires on <strong>25 Nov</strong>.</p>
+                    <p className="text-zinc-300">Tap below to renew instantly via UPI:</p>
                     
-                    {/* Direct UPI CTA inside WhatsApp */}
-                    <div className="rounded-lg bg-blue-600 p-2.5 text-center font-semibold text-white shadow-md flex items-center justify-center gap-1.5 mt-2">
+                    <div className="rounded-lg bg-blue-600 p-2 text-center font-semibold text-white shadow-sm flex items-center justify-center gap-1 mt-1">
                       <IndianRupee className="h-3.5 w-3.5" />
-                      <span>Renew via GPay / PhonePe (₹1,500)</span>
+                      <span>Pay ₹1,500 via GPay / PhonePe</span>
                     </div>
 
-                    <div className="text-[10px] text-right text-zinc-400 pt-1 flex items-center justify-end gap-1">
+                    <div className="text-[10px] text-right text-zinc-400 pt-0.5 flex items-center justify-end gap-1">
                       <span>09:15 AM</span>
-                      <CheckCheck className="h-3.5 w-3.5 text-sky-400" />
+                      <CheckCheck className="h-3 w-3 text-sky-400" />
                     </div>
                   </div>
 
-                  {/* Member Reply */}
-                  <div className="ml-auto bg-[#005c4b] text-white p-2.5 rounded-xl rounded-tr-none max-w-[75%] shadow-md">
-                    <p>Done, paid via Google Pay! 👍</p>
-                    <div className="text-[10px] text-right text-emerald-200 pt-1 flex items-center justify-end gap-1">
+                  <div className="ml-auto bg-[#005c4b] text-white p-2.5 rounded-xl rounded-tr-none max-w-[75%] shadow-sm">
+                    <p>Paid via Google Pay! 👍</p>
+                    <div className="text-[10px] text-right text-emerald-200 pt-0.5 flex items-center justify-end gap-1">
                       <span>09:18 AM</span>
-                      <CheckCheck className="h-3.5 w-3.5 text-sky-300" />
+                      <CheckCheck className="h-3 w-3 text-sky-300" />
                     </div>
                   </div>
 
-                  {/* Automated Confirmation & Receipt */}
-                  <div className="bg-[#1f2c34] text-zinc-100 p-3 rounded-xl rounded-tl-none max-w-[88%] shadow-md border border-emerald-500/30 space-y-1.5">
-                    <div className="flex items-center gap-1.5 text-emerald-400 font-semibold text-xs">
-                      <CheckCircle2 className="h-4 w-4" /> Payment Verified
+                  <div className="bg-[#1f2c34] text-zinc-100 p-2.5 rounded-xl rounded-tl-none max-w-[90%] shadow-sm border border-emerald-500/30 space-y-1">
+                    <div className="flex items-center gap-1 text-emerald-400 font-semibold text-xs">
+                      <CheckCircle2 className="h-3.5 w-3.5" /> Payment Received
                     </div>
                     <p className="text-[11px] text-zinc-300">
-                      ₹1,500 received. Your membership has been extended to <strong>25 Dec 2026</strong>. See you tomorrow at the rack!
+                      ₹1,500 received. Membership renewed until <strong>25 Dec 2026</strong>.
                     </p>
-                    <div className="text-[10px] text-right text-zinc-400 pt-1">
-                      <span>09:18 AM</span>
-                    </div>
                   </div>
                 </div>
 
-                {/* Bottom Bar inside phone */}
-                <div className="bg-[#1f2c34] p-2.5 flex items-center gap-2 border-t border-zinc-800">
-                  <div className="flex-1 rounded-lg bg-[#2a3942] px-3 py-1.5 text-xs text-zinc-400">
+                {/* Bottom Input */}
+                <div className="bg-[#1f2c34] p-2 flex items-center gap-2 border-t border-zinc-800">
+                  <div className="flex-1 rounded-lg bg-[#2a3942] px-3 py-1 text-xs text-zinc-400">
                     Type a message...
                   </div>
-                  <div className="h-7 w-7 rounded-lg bg-emerald-500 text-white flex items-center justify-center">
-                    <Send className="h-3.5 w-3.5" />
+                  <div className="h-6 w-6 rounded-lg bg-emerald-500 text-white flex items-center justify-center">
+                    <Send className="h-3 w-3" />
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Micro Caption */}
-            <p className="mt-4 text-xs text-slate-500 text-center flex items-center gap-1.5 font-medium">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Live WhatsApp preview: Zero app downloads required for members
+            <p className="mt-3 text-xs text-slate-500 text-center font-medium">
+              Zero member apps · 100% WhatsApp native
             </p>
           </div>
         </div>

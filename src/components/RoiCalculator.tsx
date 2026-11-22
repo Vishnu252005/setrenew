@@ -19,19 +19,18 @@ export default function RoiCalculator() {
   };
 
   return (
-    <section id="calculator" className="py-24 border-t border-slate-200 bg-slate-50">
+    <section id="calculator" className="py-20 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold text-red-600 mb-3">
             <AlertTriangle className="h-3.5 w-3.5" />
-            <span>THE INVISIBLE REVENUE LEAK</span>
+            <span>REVENUE LEAK CALCULATOR</span>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl uppercase">
-            How Much Money Is Your Gym Leaking Every Month?
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            How Much Are You Leaking Each Month?
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
-            In typical Indian gyms, 15% to 25% of members continue working out past their expiry date 
-            because staff are busy and awkward confrontations are avoided.
+          <p className="mt-2.5 text-slate-600 text-sm sm:text-base">
+            See how much uncollected revenue automated WhatsApp reminders will recover for your gym.
           </p>
         </div>
 
@@ -98,26 +97,20 @@ export default function RoiCalculator() {
                 {estimatedLeakage.toLocaleString('en-IN')}
                 <span className="text-base text-slate-500 font-normal"> / mo</span>
               </div>
-              <p className="mt-2 text-xs text-slate-600">
-                That is <strong className="text-red-600 font-semibold">₹{annualLeakage.toLocaleString('en-IN')}</strong> lost every year to delayed renewals and forgotten dues.
+              <p className="mt-2 text-xs text-slate-500 font-medium">
+                ~₹{annualLeakage.toLocaleString('en-IN')} uncollected every year
               </p>
 
-              <div className="mt-6 pt-5 border-t border-red-200/60 text-left">
-                <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 mb-1">
-                  <TrendingUp className="h-4 w-4" />
-                  SetRenew Cost: Flat ₹499/month
-                </div>
-                <p className="text-xs text-slate-600">
-                  Recovering even <strong>ONE</strong> single member per month pays for SetRenew for the next 3 months.
-                </p>
+              <div className="mt-5 pt-4 border-t border-red-200/60 flex items-center justify-between text-xs">
+                <span className="text-slate-600 font-medium">SetRenew Pricing:</span>
+                <span className="font-bold text-emerald-700">₹499 / month flat</span>
               </div>
 
               <button
                 onClick={scrollToWaitlist}
-                className="mt-5 w-full flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-blue-700 transition-colors border border-blue-600 cursor-pointer shadow-md shadow-blue-500/20"
+                className="mt-5 w-full flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-blue-700 transition-colors border border-blue-600 cursor-pointer shadow-sm"
               >
-                <span>Recover Your Revenue (Free for 30 Days)</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Claim 30 Days Free →</span>
               </button>
             </div>
           </div>
