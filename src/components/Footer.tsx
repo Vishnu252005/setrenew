@@ -20,7 +20,7 @@ export default function Footer() {
               100% WhatsApp-native fee recovery and automated gym dues collection tool for Indian fitness clubs.
             </p>
             <div className="text-[11px] text-slate-400">
-              A product of <a href="https://vihaya.app" className="font-semibold text-slate-600 hover:text-emerald-700 transition-colors">Vihaya Innovations</a>
+              Built for Indian Gyms & Fitness Clubs
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <div>
-            &copy; 2026 SetRenew. Powered by Vihaya Innovations Pvt Ltd. All rights reserved.
+            &copy; 2026 SetRenew. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-slate-800 transition-colors">

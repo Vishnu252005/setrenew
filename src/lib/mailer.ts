@@ -72,8 +72,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
     return false;
   }
 
-  const encodedGym = encodeURIComponent(lead.gymName);
-  const waUrl = `https://wa.me/917994263309?text=Hi%20Vishnu,%20I%20just%20activated%20my%20SetRenew%20VIP%20Trial%20for%20${encodedGym}`;
+  const portalUrl = 'https://setrenew.vihaya.app/';
   const passId = `SR-${new Date().getFullYear()}-VIP-${lead.id.slice(-4).toUpperCase()}`;
 
   const html = `
@@ -331,7 +330,6 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
       <div class="brand-row">
         <span class="brand-logo">⚡</span>
         <span class="brand-name">SetRenew</span>
-        <span class="brand-sub">· by Vihaya</span>
       </div>
       <div class="vip-tag">30-Day VIP Pass · Unrestricted Access</div>
       <h1 class="header-title">Welcome to Auto-Renew Mode, ${lead.ownerName}!</h1>
@@ -410,8 +408,8 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
       </div>
 
       <div class="cta-container">
-        <a href="${waUrl}" class="cta-btn" target="_blank">
-          Activate Your WhatsApp Setup Now →
+        <a href="${portalUrl}" class="cta-btn" target="_blank">
+          Access SetRenew →
         </a>
       </div>
 
@@ -419,17 +417,16 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
         <p class="founder-quote">
           “No more standing at reception saying ‘Bhai, fees pending hai’. SetRenew handles collections politely in the background so you can focus on training members.”
         </p>
-        <span class="founder-sign">— Vishnu S · Founder, Vihaya Innovations</span>
+        <span class="founder-sign">— The SetRenew Team</span>
       </div>
 
       <p style="font-size: 12px; color: #64748b; text-align: center; margin-top: 24px;">
-        Questions? Reply directly to this email or WhatsApp us anytime at <strong style="color: #0f172a;">+91 79942 63309</strong>.
+        Questions? Simply reply directly to this email or write to <strong style="color: #0f172a;">support@vihaya.app</strong>.
       </p>
     </div>
 
     <div class="footer">
-      SetRenew is engineered & operated by <strong>Vihaya Innovations Private Limited</strong>.<br>
-      Pallimukku, Kollam, Kerala, India.<br>
+      SetRenew · 100% WhatsApp-Native Gym Dues & Fee Recovery.<br>
       &copy; 2026 SetRenew. All rights reserved. · <a href="https://setrenew.vihaya.app/privacy">Privacy Policy</a> · <a href="https://setrenew.vihaya.app/terms">Terms of Service</a>
     </div>
   </div>

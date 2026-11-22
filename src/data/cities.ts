@@ -222,7 +222,7 @@ export const CITIES: Record<string, CityData> = {
     title: 'Best Gym Management Software in Kerala — Automated WhatsApp Reminders',
     metaTitle: 'Gym Management Software Kerala (Kochi, Trivandrum, Kollam) | SetRenew',
     metaDescription:
-      'Manage gyms across Kerala with WhatsApp fee reminders, 1-tap UPI collection, and zero biometric hardware. Built by Vihaya Innovations.',
+      'Manage gyms across Kerala with WhatsApp fee reminders, 1-tap UPI collection, and zero biometric hardware.',
     heroBadge: 'KERALA FITNESS CENTERS',
     headline: 'Kerala’s Most Trusted WhatsApp Gym Fee Recovery Tool',
     subhead:
@@ -233,8 +233,8 @@ export const CITIES: Record<string, CityData> = {
     localSolution: 'SetRenew runs in the background on autopilot, freeing trainers to focus on coaching and fitness transformations.',
     faqs: [
       {
-        question: 'Is SetRenew developed locally in Kerala?',
-        answer: 'Yes! SetRenew is engineered by Vihaya Innovations in Kerala, built specifically for the operational needs of Indian fitness businesses.',
+        question: 'Is SetRenew easy to set up for gyms in Kerala?',
+        answer: 'Yes! SetRenew is built specifically for the operational needs of Indian fitness businesses and takes under 2 minutes to start.',
       },
     ],
   },
