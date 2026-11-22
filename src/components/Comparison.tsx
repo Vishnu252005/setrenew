@@ -58,42 +58,42 @@ export default function Comparison() {
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>Only SMS or unofficial WhatsApp scripts (high ban risk)</span>
+                    <span>Only SMS or complex scripts that members ignore</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>No direct 1-tap UPI links (GPay/PhonePe) in reminders</span>
+                    <span>No direct 1-tap UPI payment buttons in reminders</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>Requires expensive biometric fingerprint machines that fail</span>
+                    <span>Expensive fingerprint machines that stop working</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>Daily desk check-in scanning causes morning rush queues</span>
+                    <span>Desk check-in lines cause morning rush crowd</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>50-field bloated ERP forms take 5–10 mins per member</span>
+                    <span>Long 30-field forms take 10 minutes per member</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-red-50 text-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <X className="h-3 w-3 stroke-[2.5]" />
                     </div>
-                    <span>Desktop-only software or buggy mobile apps</span>
+                    <span>Complicated software that needs staff training</span>
                   </div>
                 </div>
               </div>
@@ -142,42 +142,42 @@ export default function Comparison() {
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>Automated WhatsApp Reminders</strong> (Official Meta Cloud API)</span>
+                    <span><strong>Automated WhatsApp Reminders</strong> sent directly to members</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>Direct 1-Tap UPI Links</strong> (GPay, PhonePe, Paytm with 0% cut)</span>
+                    <span><strong>1-Tap UPI Payment Links</strong> (GPay, PhonePe, Paytm directly to your bank)</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>₹0 Hardware</strong> — No biometric machines or turnstiles needed</span>
+                    <span><strong>₹0 Hardware</strong> — No biometric machines needed</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>Members Walk in Freely</strong> — Zero daily desk scanning friction</span>
+                    <span><strong>Members Walk in Freely</strong> — No daily desk queues</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>10-Second Member Onboarding</strong> right from trainer&apos;s phone</span>
+                    <span><strong>10-Second Member Setup</strong> right from your mobile</span>
                   </div>
 
                   <div className="flex items-start gap-2.5">
                     <div className="h-4 w-4 rounded bg-emerald-100 text-[#16a34a] flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="h-3 w-3 stroke-[3]" />
                     </div>
-                    <span><strong>Live Cloud Sync</strong> across phone, tablet, and front desk</span>
+                    <span><strong>Works on Any Device</strong> — phone, tablet, and computer</span>
                   </div>
                 </div>
               </div>

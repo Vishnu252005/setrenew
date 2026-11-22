@@ -11,7 +11,7 @@ export default function Faq() {
     },
     {
       q: 'Will my WhatsApp number get blocked?',
-      a: 'Never. SetRenew connects via the Official Meta Cloud API with pre-approved transactional templates.',
+      a: 'Never. SetRenew uses official, verified WhatsApp business messaging. Your personal number is 100% safe and secure.',
     },
     {
       q: 'Can I import members from Excel?',
