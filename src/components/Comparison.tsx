@@ -1,0 +1,134 @@
+'use client';
+
+import React from 'react';
+import { Check, X } from 'lucide-react';
+
+export default function Comparison() {
+  const comparisons = [
+    {
+      feature: 'Automated WhatsApp Cloud Reminders',
+      setrenew: true,
+      legacy: 'Only SMS or Unofficial Scripts',
+      excel: false,
+    },
+    {
+      feature: 'Direct 1-Tap UPI Payment Links (GPay/PhonePe)',
+      setrenew: true,
+      legacy: false,
+      excel: false,
+    },
+    {
+      feature: 'Requires Expensive Biometric Hardware',
+      setrenew: 'No (Zero Hardware Required)',
+      legacy: 'Yes (₹25k–₹50k eSSL / Turnstiles)',
+      excel: 'No',
+    },
+    {
+      feature: 'Member Desk Scanning Friction Everyday',
+      setrenew: 'No (Members walk in freely)',
+      legacy: 'Yes (Queues at desk)',
+      excel: 'No',
+    },
+    {
+      feature: 'Time Required to Onboard a Member',
+      setrenew: '10 Seconds',
+      legacy: '5–10 Minutes',
+      excel: '2–3 Minutes',
+    },
+    {
+      feature: 'Cloud Sync Across Phone, Tablet & Desk',
+      setrenew: true,
+      legacy: 'Desktop Only / Clunky App',
+      excel: 'No (Local File)',
+    },
+    {
+      feature: 'Monthly Cost',
+      setrenew: 'Flat ₹499 / month',
+      legacy: '₹1,500 – ₹3,000 / month',
+      excel: 'Free (but ₹45,000 lost in leakage)',
+    },
+  ];
+
+  return (
+    <section id="comparison" className="py-20 border-t border-zinc-800 bg-zinc-950">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs font-semibold text-zinc-300 mb-3">
+            <span>THE HONEST COMPARISON</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Why SetRenew is 10x Simpler
+          </h2>
+          <p className="mt-3 text-zinc-400 text-sm sm:text-base">
+            See how SetRenew compares to bloated legacy ERPs and manual Excel sheets.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto rounded-xl border border-zinc-800 glass-card">
+          <table className="w-full text-left text-sm">
+            <thead className="border-b border-zinc-800 bg-zinc-900/80 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+              <tr>
+                <th className="py-4 px-6">Capability</th>
+                <th className="py-4 px-6 text-blue-400 bg-blue-500/10 border-x border-blue-500/20">
+                  SetRenew (Our App)
+                </th>
+                <th className="py-4 px-6">Legacy Gym ERPs</th>
+                <th className="py-4 px-6">Excel & Paper Registers</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
+              {comparisons.map((row, idx) => (
+                <tr key={idx} className="hover:bg-zinc-900/30">
+                  <td className="py-4 px-6 font-medium text-white">{row.feature}</td>
+
+                  {/* SetRenew Column */}
+                  <td className="py-4 px-6 font-semibold text-white bg-blue-500/5 border-x border-blue-500/20">
+                    {typeof row.setrenew === 'boolean' ? (
+                      row.setrenew ? (
+                        <div className="flex items-center gap-1.5 text-emerald-400">
+                          <Check className="h-4 w-4" /> <span>Yes</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-1.5 text-zinc-500">
+                          <X className="h-4 w-4" /> <span>No</span>
+                        </div>
+                      )
+                    ) : (
+                      <span className="text-blue-300">{row.setrenew}</span>
+                    )}
+                  </td>
+
+                  {/* Legacy ERPs */}
+                  <td className="py-4 px-6 text-zinc-400">
+                    {typeof row.legacy === 'boolean' ? (
+                      row.legacy ? (
+                        <Check className="h-4 w-4 text-zinc-400" />
+                      ) : (
+                        <X className="h-4 w-4 text-red-400" />
+                      )
+                    ) : (
+                      <span>{row.legacy}</span>
+                    )}
+                  </td>
+
+                  {/* Excel */}
+                  <td className="py-4 px-6 text-zinc-400">
+                    {typeof row.excel === 'boolean' ? (
+                      row.excel ? (
+                        <Check className="h-4 w-4 text-zinc-400" />
+                      ) : (
+                        <X className="h-4 w-4 text-red-400" />
+                      )
+                    ) : (
+                      <span>{row.excel}</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
