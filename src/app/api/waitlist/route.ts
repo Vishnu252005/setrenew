@@ -32,12 +32,15 @@ export async function POST(req: Request) {
       );
     }
 
-    const dataDir = path.join(process.cwd(), 'data');
+    // Use /tmp on Vercel serverless, otherwise local data dir
+    const dataDir = process.env.VERCEL ? '/tmp' : path.join(process.cwd(), 'data');
     const filePath = path.join(dataDir, 'waitlist.json');
 
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
+    try {
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+    } catch {}
 
     let entries: WaitlistEntry[] = [];
     if (fs.existsSync(filePath)) {
@@ -70,12 +73,18 @@ export async function POST(req: Request) {
     };
 
     entries.push(newEntry);
-    fs.writeFileSync(filePath, JSON.stringify(entries, null, 2));
+    console.log('[SETRENEW_WAITLIST_SIGNUP]', JSON.stringify(newEntry));
+
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(entries, null, 2));
+    } catch (writeErr) {
+      console.warn('Filesystem write warning:', writeErr);
+    }
 
     return NextResponse.json({
       success: true,
       message: 'Spot reserved successfully!',
-      position: entries.length,
+      position: entries.length || 1,
     });
   } catch (error: any) {
     console.error('Waitlist API Error:', error);
