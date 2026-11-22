@@ -1,0 +1,17 @@
+{
+  "name": "SetRenew — Automated WhatsApp Gym Fee Reminders",
+  "short_name": "SetRenew",
+  "description": "Stop chasing gym fees manually. Automated WhatsApp renewal reminders with direct 1-tap UPI payment links for gym owners.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"]
+}
