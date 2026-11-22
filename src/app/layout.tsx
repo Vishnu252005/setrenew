@@ -83,9 +83,9 @@ export const metadata: Metadata = {
     'best gym software for 50 to 500 members',
     'fitness studio fee management app',
   ],
-  authors: [{ name: 'Vihaya Innovations' }, { name: 'Vishnu S' }],
-  creator: 'Vihaya Innovations',
-  publisher: 'SetRenew by Vihaya',
+  authors: [{ name: 'SetRenew' }],
+  creator: 'SetRenew',
+  publisher: 'SetRenew',
   applicationName: 'SetRenew',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
     description:
       'Stop chasing gym fees manually. Automated WhatsApp reminders with direct 1-tap UPI links. 0% commission.',
     images: ['/opengraph-image'],
-    creator: '@vihayaevents',
+    creator: '@setrenew',
   },
   robots: {
     index: true,
