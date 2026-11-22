@@ -13,8 +13,8 @@ export interface EmailLeadPayload {
 }
 
 const ZEPTO_URL = 'https://api.zeptomail.in/v1.1/email';
-const FROM_ADDRESS = 'no-reply@events.vihaya.app';
-const FROM_NAME = 'SetRenew by Vihaya';
+const FROM_ADDRESS = process.env.MAIL_FROM_ADDRESS || 'setrenew@vihaya.app';
+const FROM_NAME = 'SetRenew';
 const TEAM_INBOX = 'support@vihaya.app';
 const NOTIFY_INBOX = 'vihaya.app@gmail.com';
 
