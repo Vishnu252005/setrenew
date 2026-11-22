@@ -212,17 +212,17 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
             </td>
             <td style="vertical-align: top;">
               <h4 style="margin: 0 0 4px; font-size: 14px; font-weight: 700; color: #0f172a;">
-                Direct WhatsApp Onboarding
+                Instant Launch Email & Access Link
               </h4>
               <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #64748b;">
-                Before your slot activates, we will message you directly on WhatsApp to import your existing notebook or Excel list in under 60 seconds.
+                The exact moment SetRenew goes live for your batch, you will receive an email notification with your direct access link so you can immediately log in and use it.
               </p>
             </td>
           </tr>
         </table>
 
         <!-- Step 3 -->
-        <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+        <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
           <tr>
             <td width="32" style="vertical-align: top; padding-right: 12px;">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -235,11 +235,25 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
             </td>
             <td style="vertical-align: top;">
               <h4 style="margin: 0 0 4px; font-size: 14px; font-weight: 700; color: #0f172a;">
-                100% Direct-to-Bank Collections
+                1-on-1 WhatsApp Setup & 30-Day VIP Trial
               </h4>
               <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #64748b;">
-                Members pay directly to your gym's existing UPI QR. Zero payment gateway commissions, zero middlemen, instant money in your account.
+                Our team will assist you on WhatsApp to import your member notebook or spreadsheet in 60 seconds. All payments go 100% direct to your bank QR with 0% fee.
               </p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Launch Alert Box -->
+        <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; margin: 20px 0 24px;">
+          <tr>
+            <td style="padding: 14px 18px;">
+              <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 3px;">
+                🔔 You will receive an email the moment it is live
+              </div>
+              <div style="font-size: 12px; color: #15803d; line-height: 1.5;">
+                No action is needed right now. As soon as this feature is rolled out, we will send an email directly to <strong>${lead.email}</strong> so you can immediately jump in and use it.
+              </div>
             </td>
           </tr>
         </table>
