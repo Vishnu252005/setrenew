@@ -25,7 +25,8 @@ export default function Hero() {
             <div className="lg:col-span-6 flex flex-col text-left">
               {/* Top Badge */}
               <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-800 shadow-xs mb-6 w-fit">
-                <span>Built for Indian Gym Owners</span>
+                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>1,000+ Indian Gyms on the Priority Waitlist</span>
                 <span className="text-base leading-none">🇮🇳</span>
               </div>
 

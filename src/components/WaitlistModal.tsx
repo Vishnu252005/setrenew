@@ -53,7 +53,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
       if (!res.ok) throw new Error(data.error || 'Failed to submit');
 
       setSubmitted(true);
-      setPosition(data.position || 18);
+      setPosition(data.position || 1131);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
       setErrorMsg(msg);
@@ -85,7 +85,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
             </p>
             {position && (
               <div className="mt-4 inline-block rounded-lg border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-800">
-                Priority Access Queue: <span className="font-bold">#{position}</span>
+                Priority Waitlist Spot: <span className="font-bold text-emerald-900">#{position.toLocaleString()}</span> (Batch 1 Queue)
               </div>
             )}
             <div className="mt-4 rounded-lg bg-emerald-50/60 border border-emerald-200 p-3 text-xs text-emerald-900 space-y-1">
@@ -105,7 +105,7 @@ export default function WaitlistModal({ isOpen, onClose, title = 'Start Your 30-
           <div>
             <div className="mb-5">
               <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600">
-                LIMITED TO FIRST 100 GYMS · 30 DAYS 100% FREE
+                JOIN 1,000+ GYM OWNERS · 30 DAYS 100% FREE VIP TRIAL
               </span>
               <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">{title}</h3>
               <p className="text-xs text-slate-500 mt-1">

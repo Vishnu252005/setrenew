@@ -18,6 +18,7 @@ export interface LeadPayload {
   source: string;
   status: string;
   createdAt: string;
+  position?: number;
   ip?: string;
   userAgent?: string;
 }
@@ -104,9 +105,11 @@ export async function POST(req: Request) {
             lastUpdated: nowIso,
           });
 
+          const existingPos = existingDoc.data()?.position || (1130 + Math.floor(Math.random() * 15));
+
           // Dispatch confirmation email if email is provided
           if (cleanEmail) {
-            sendApplicantWelcomeEmail(leadData).catch((err) =>
+            sendApplicantWelcomeEmail({ ...leadData, position: existingPos }).catch((err) =>
               console.error('[Mailer] Applicant email error:', err)
             );
           }
@@ -117,7 +120,7 @@ export async function POST(req: Request) {
           return NextResponse.json({
             success: true,
             message: 'Your spot is already active! We updated your gym details.',
-            position: 1,
+            position: existingPos,
             leadId: existingDoc.id,
           });
         }
@@ -156,7 +159,8 @@ export async function POST(req: Request) {
       console.warn('[FallbackStorage] Could not write to filesystem:', fsErr);
     }
 
-    const assignedPosition = Math.floor(Math.random() * 15) + 12;
+    const assignedPosition = 1130 + Math.floor(Math.random() * 25);
+    leadData.position = assignedPosition;
 
     // 3. Dispatch Emails Asynchronously
     if (cleanEmail) {

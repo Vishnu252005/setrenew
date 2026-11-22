@@ -75,8 +75,9 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
   }
 
   const portalUrl = 'https://setrenew.vihaya.app/';
-  const spotNum = lead.position || 14;
-  const passId = `SR-${new Date().getFullYear()}-#${String(spotNum).padStart(3, '0')}`;
+  const spotNum = lead.position || 1131;
+  const spotFormatted = Number(spotNum).toLocaleString();
+  const passId = `SR-${new Date().getFullYear()}-#${spotNum}`;
 
   const html = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -100,7 +101,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
               <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff; vertical-align: middle;">SetRenew</span>
             </td>
             <td align="right" style="vertical-align: middle;">
-              <span style="display: inline-block; padding: 4px 10px; background-color: rgba(22, 163, 74, 0.2); border: 1px solid rgba(22, 163, 74, 0.5); border-radius: 6px; font-size: 11px; font-weight: 700; color: #4ade80; text-transform: uppercase; letter-spacing: 0.05em;">Priority Spot #${spotNum}</span>
+              <span style="display: inline-block; padding: 4px 10px; background-color: rgba(22, 163, 74, 0.2); border: 1px solid rgba(22, 163, 74, 0.5); border-radius: 6px; font-size: 11px; font-weight: 700; color: #4ade80; text-transform: uppercase; letter-spacing: 0.05em;">Priority Spot #${spotFormatted}</span>
             </td>
           </tr>
         </table>
@@ -123,7 +124,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
           Hi <strong>${lead.ownerName}</strong>,
         </p>
         <p style="font-size: 14px; line-height: 1.6; color: #334155; margin: 0 0 24px;">
-          Thank you for reserving early access. While standard gyms in India continue to lose ₹30,000 to ₹50,000 every single month from forgotten expiries and awkward manual follow-ups, <strong>${lead.gymName}</strong> is locked in for our automated WhatsApp collection engine.
+          Thank you for reserving early access. You have officially joined <strong>1,000+ gym owners across India</strong> who are moving away from forgotten expiries and awkward manual follow-ups. <strong>${lead.gymName}</strong> is locked in at <strong>Priority Spot #${spotFormatted}</strong>.
         </p>
 
         <!-- Digital Pass Card -->
@@ -308,7 +309,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
   return sendZeptoMail({
     toAddress: lead.email,
     toName: lead.ownerName,
-    subject: `⚡ Your SetRenew Priority Waitlist Spot #${spotNum} is Reserved — ${lead.gymName}`,
+    subject: `⚡ Your SetRenew Priority Waitlist Spot #${spotFormatted} is Reserved — ${lead.gymName}`,
     htmlContent: html,
   });
 }
