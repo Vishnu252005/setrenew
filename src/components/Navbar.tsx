@@ -1,12 +1,39 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Dumbbell, ArrowRight } from 'lucide-react';
 import WaitlistModal from './WaitlistModal';
 
 export default function Navbar() {
   const [modalOpen, setModalOpen] = useState(false);
+
+  // If page loads with a hash (e.g. /#pricing), smooth scroll to it and clean the URL
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const el = document.getElementById(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+          // Clean the ugly hash from address bar
+          window.history.replaceState(null, '', window.location.pathname);
+        }, 150);
+      }
+    }
+  }, []);
+
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      // Keep URL clean without appending #hash
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+  };
 
   return (
     <>
@@ -28,19 +55,35 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links (Clean smooth scrolling with NO URL hashes) */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <a href="#features" className="transition-colors hover:text-slate-900">
+            <a
+              href="#features"
+              onClick={(e) => handleScrollTo(e, 'features')}
+              className="transition-colors hover:text-slate-900 cursor-pointer"
+            >
               Features
             </a>
-            <a href="#how-it-works" className="transition-colors hover:text-slate-900">
+            <a
+              href="#how-it-works"
+              onClick={(e) => handleScrollTo(e, 'how-it-works')}
+              className="transition-colors hover:text-slate-900 cursor-pointer"
+            >
               How It Works
             </a>
-            <a href="#pricing" className="transition-colors hover:text-slate-900">
+            <a
+              href="#pricing"
+              onClick={(e) => handleScrollTo(e, 'pricing')}
+              className="transition-colors hover:text-slate-900 cursor-pointer"
+            >
               Pricing
             </a>
-            <a href="#faq" className="transition-colors hover:text-slate-900">
-              Testimonials
+            <a
+              href="#faq"
+              onClick={(e) => handleScrollTo(e, 'faq')}
+              className="transition-colors hover:text-slate-900 cursor-pointer"
+            >
+              FAQs
             </a>
           </nav>
 
@@ -63,6 +106,7 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Modal */}
       <WaitlistModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );

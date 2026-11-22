@@ -163,12 +163,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/#preview" className="hover:text-emerald-700 transition-colors">
+                <Link href="/" className="hover:text-emerald-700 transition-colors">
                   Interactive Demo
                 </Link>
               </li>
               <li>
-                <Link href="/#pricing" className="hover:text-emerald-700 transition-colors">
+                <Link href="/" className="hover:text-emerald-700 transition-colors">
                   Pricing (Flat ₹499)
                 </Link>
               </li>
