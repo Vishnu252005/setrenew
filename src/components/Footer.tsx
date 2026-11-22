@@ -133,6 +133,26 @@ export default function Footer() {
                   Ahmedabad Gyms
                 </Link>
               </li>
+              <li>
+                <Link href="/cities/kolkata" className="hover:text-emerald-700 transition-colors">
+                  Kolkata Gyms
+                </Link>
+              </li>
+              <li>
+                <Link href="/cities/jaipur" className="hover:text-emerald-700 transition-colors">
+                  Jaipur Gyms
+                </Link>
+              </li>
+              <li>
+                <Link href="/cities/chandigarh" className="hover:text-emerald-700 transition-colors">
+                  Chandigarh Gyms
+                </Link>
+              </li>
+              <li>
+                <Link href="/cities/lucknow" className="hover:text-emerald-700 transition-colors">
+                  Lucknow Gyms
+                </Link>
+              </li>
             </ul>
           </div>
 
