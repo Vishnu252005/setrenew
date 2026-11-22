@@ -152,7 +152,7 @@ export default function Hero() {
                           Your gym membership of <strong className="text-slate-900">₹1,499</strong> is due on <strong className="text-slate-900">5 Jan</strong>.
                         </p>
                         <p className="text-slate-700 leading-snug">
-                          Pay now and keep your streak going! 🔥
+                          Pay now and keep your membership active.
                         </p>
 
                         {/* WhatsApp Pay Button */}

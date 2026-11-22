@@ -97,7 +97,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
         <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td style="vertical-align: middle;">
-              <span style="display: inline-block; width: 28px; height: 28px; background-color: #16a34a; color: #ffffff; border-radius: 6px; text-align: center; line-height: 28px; font-size: 15px; font-weight: bold; margin-right: 8px; vertical-align: middle;">⚡</span>
+              <span style="display: inline-block; width: 28px; height: 28px; background-color: #16a34a; color: #ffffff; border-radius: 6px; text-align: center; line-height: 28px; font-size: 12px; font-weight: 800; letter-spacing: 0.05em; margin-right: 10px; vertical-align: middle;">SR</span>
               <span style="font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff; vertical-align: middle;">SetRenew</span>
             </td>
             <td align="right" style="vertical-align: middle;">
@@ -250,10 +250,10 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
           <tr>
             <td style="padding: 14px 18px;">
               <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 3px;">
-                🔔 You will receive an email the moment it is live
+                Official Launch Notification
               </div>
               <div style="font-size: 12px; color: #15803d; line-height: 1.5;">
-                No action is needed right now. As soon as this feature is rolled out, we will send an email directly to <strong>${lead.email}</strong> so you can immediately jump in and use it.
+                No action is needed right now. As soon as this feature is rolled out, we will send an email directly to <strong>${lead.email}</strong> so you can immediately access and use it.
               </div>
             </td>
           </tr>
@@ -309,7 +309,7 @@ export async function sendApplicantWelcomeEmail(lead: EmailLeadPayload): Promise
   return sendZeptoMail({
     toAddress: lead.email,
     toName: lead.ownerName,
-    subject: `⚡ Your SetRenew Priority Waitlist Spot #${spotFormatted} is Reserved — ${lead.gymName}`,
+    subject: `Your SetRenew Priority Waitlist Spot #${spotFormatted} is Reserved — ${lead.gymName}`,
     htmlContent: html,
   });
 }
