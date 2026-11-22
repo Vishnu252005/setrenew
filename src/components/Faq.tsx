@@ -38,16 +38,16 @@ export default function Faq() {
   };
 
   return (
-    <section id="faq" className="py-20 border-t border-zinc-800 bg-zinc-950">
+    <section id="faq" className="py-24 border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs font-semibold text-zinc-300 mb-3">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 mb-3">
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl uppercase">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-zinc-400 text-sm">
+          <p className="mt-3 text-slate-600 text-sm">
             Everything you need to know about SetRenew and how it helps your gym collect fees on autopilot.
           </p>
         </div>
@@ -58,21 +58,21 @@ export default function Faq() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-xl border border-zinc-800 overflow-hidden transition-colors"
+                className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden transition-colors"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-5 text-left font-semibold text-white text-sm sm:text-base cursor-pointer hover:text-blue-400 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left font-bold text-slate-900 text-sm sm:text-base cursor-pointer hover:text-blue-600 transition-colors"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`h-4 w-4 text-zinc-400 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-blue-400' : ''
+                    className={`h-4 w-4 text-slate-500 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-blue-600' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-3">
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
                     {faq.a}
                   </div>
                 )}

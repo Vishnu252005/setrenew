@@ -50,61 +50,61 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="py-20 border-t border-zinc-800 bg-zinc-950">
+    <section id="comparison" className="py-24 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs font-semibold text-zinc-300 mb-3">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700 mb-3 shadow-xs">
             <span>THE HONEST COMPARISON</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl uppercase">
             Why SetRenew is 10x Simpler
           </h2>
-          <p className="mt-3 text-zinc-400 text-sm sm:text-base">
+          <p className="mt-3 text-slate-600 text-sm sm:text-base">
             See how SetRenew compares to bloated legacy ERPs and manual Excel sheets.
           </p>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-zinc-800 glass-card">
+        <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-zinc-800 bg-zinc-900/80 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+            <thead className="border-b border-slate-200 bg-slate-50 text-xs font-bold text-slate-600 uppercase tracking-wider">
               <tr>
                 <th className="py-4 px-6">Capability</th>
-                <th className="py-4 px-6 text-blue-400 bg-blue-500/10 border-x border-blue-500/20">
+                <th className="py-4 px-6 text-blue-700 bg-blue-50/70 border-x border-blue-200">
                   SetRenew (Our App)
                 </th>
                 <th className="py-4 px-6">Legacy Gym ERPs</th>
                 <th className="py-4 px-6">Excel & Paper Registers</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
+            <tbody className="divide-y divide-slate-100 text-slate-700">
               {comparisons.map((row, idx) => (
-                <tr key={idx} className="hover:bg-zinc-900/30">
-                  <td className="py-4 px-6 font-medium text-white">{row.feature}</td>
+                <tr key={idx} className="hover:bg-slate-50/50">
+                  <td className="py-4 px-6 font-semibold text-slate-900">{row.feature}</td>
 
                   {/* SetRenew Column */}
-                  <td className="py-4 px-6 font-semibold text-white bg-blue-500/5 border-x border-blue-500/20">
+                  <td className="py-4 px-6 font-bold text-slate-900 bg-blue-50/30 border-x border-blue-200">
                     {typeof row.setrenew === 'boolean' ? (
                       row.setrenew ? (
-                        <div className="flex items-center gap-1.5 text-emerald-400">
+                        <div className="flex items-center gap-1.5 text-emerald-600 font-bold">
                           <Check className="h-4 w-4" /> <span>Yes</span>
                         </div>
                       ) : (
-                        <div className="flex items-center gap-1.5 text-zinc-500">
+                        <div className="flex items-center gap-1.5 text-slate-400">
                           <X className="h-4 w-4" /> <span>No</span>
                         </div>
                       )
                     ) : (
-                      <span className="text-blue-300">{row.setrenew}</span>
+                      <span className="text-blue-700 font-bold">{row.setrenew}</span>
                     )}
                   </td>
 
                   {/* Legacy ERPs */}
-                  <td className="py-4 px-6 text-zinc-400">
+                  <td className="py-4 px-6 text-slate-600">
                     {typeof row.legacy === 'boolean' ? (
                       row.legacy ? (
-                        <Check className="h-4 w-4 text-zinc-400" />
+                        <Check className="h-4 w-4 text-slate-600" />
                       ) : (
-                        <X className="h-4 w-4 text-red-400" />
+                        <X className="h-4 w-4 text-red-500" />
                       )
                     ) : (
                       <span>{row.legacy}</span>
@@ -112,12 +112,12 @@ export default function Comparison() {
                   </td>
 
                   {/* Excel */}
-                  <td className="py-4 px-6 text-zinc-400">
+                  <td className="py-4 px-6 text-slate-600">
                     {typeof row.excel === 'boolean' ? (
                       row.excel ? (
-                        <Check className="h-4 w-4 text-zinc-400" />
+                        <Check className="h-4 w-4 text-slate-600" />
                       ) : (
-                        <X className="h-4 w-4 text-red-400" />
+                        <X className="h-4 w-4 text-red-500" />
                       )
                     ) : (
                       <span>{row.excel}</span>
