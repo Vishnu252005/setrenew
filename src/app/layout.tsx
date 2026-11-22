@@ -131,6 +131,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'OarQUWPSYaByQoOu9qNN9KKugeYywIN1o9dtc_BADGY',
+  },
   alternates: {
     canonical: SITE_URL,
     languages: {
